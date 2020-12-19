@@ -10,10 +10,11 @@ Maybe adding a config file too?
 
 ## Patching method:
 This patch method basically simulates a player's tickcount (as if it incremented normally) when their tickcount suddenly jumps/spikes above the tolerance set by the Convar below.\
-This does not happen to players who recently spawned or teleported (Via a TF2 teleporter).
+This does not happen to players who recently spawned or teleported.
 
-Players who don't cheat but lag (packetloss) shouldn't be affected much, you have to lag quite hard for this to be an issue, which at that point, your hitreg will be awful anyway.\
-If this is a concern to you, set the Tolerance to 2.
+Players who don't cheat but lag (packetloss) shouldn't be affected much.\
+You have to lag quite hard for this to be an issue, which at that point, your hitreg will be awful anyway.\
+If this is a concern to you, you can set the Tolerance to 2, which limits when the patch kicks in.
 
 ## ConVars:
 `jay_backtrack_enable 1`\
