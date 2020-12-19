@@ -21,17 +21,17 @@ Enable the backtrack patch.
 
 `jay_backtrack_tolerance 0`\
 Sets the tolerance for tickcount changes.\
-0 = Tickcount must increment.\
+0 = Tickcount must increment.
 - This happens for most players 99% of the time.
 - Recommended value.
 
-1 = Allow tickcount to unexpectedly be off by 1.\
+1 = Allow tickcount to unexpectedly be off by 1.
 - This can happen with somepacket loss, but isn't often.
 
-2 = Allow tickcount to unexpectedly be off by 2.\
+2 = Allow tickcount to unexpectedly be off by 2.
 - Cheats could exploit this to somewhat get around the patch, but it's so tiny, it barely helps them.
 - It's not recommended to use this value.
 
-3 = Allow tickcount to unexpectedly be off by 3.\
+3 = Allow tickcount to unexpectedly be off by 3.
 - Do not use this value unless you understand what this does!
 - A value of 3 means cheats could potentially bypass this patch to some degree, although not by much.
