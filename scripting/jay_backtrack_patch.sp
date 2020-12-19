@@ -18,6 +18,7 @@
 
 
 #include <sourcemod>
+#include <sdktools_entoutput>
 
 
 #define CVAR_ENABLE 	0
@@ -39,7 +40,7 @@ public Plugin myinfo = {
 	name = "Jay's Backtrack Patch",
 	author = "J_Tanzanite",
 	description = "Patches backtracking cheats (from Lilac).",
-	version = "1.0.0",
+	version = "1.1.0",
 	url = ""
 };
 
@@ -54,6 +55,8 @@ public void OnPluginStart()
 		HookEvent("player_teleported", event_teleported, EventHookMode_Post);
 
 	HookEvent("player_spawn", event_teleported, EventHookMode_Post);
+
+	HookEntityOutput("trigger_teleport", "OnEndTouch", map_teleport);
 
 	cvar[CVAR_ENABLE] = CreateConVar("jay_backtrack_enable", "1",
 		"Enable Jay's Backtracking patch.",
@@ -89,6 +92,14 @@ public Action event_teleported(Event event, const char[] name, bool dontBroadcas
 
 	if (is_player_valid(client))
 		time_teleport[client] = GetGameTime();
+}
+
+public void map_teleport(const char[] output, int caller, int activator, float delay)
+{
+	if (!is_player_valid(activator) || IsFakeClient(activator))
+		return;
+
+	time_teleport[activator] = GetGameTime();
 }
 
 public void OnClientPutInServer(int client)
