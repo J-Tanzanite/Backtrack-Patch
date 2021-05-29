@@ -3,11 +3,6 @@ This backtrack patch is from Little Anti-Cheat (My own project), but as a standa
 
 Little Anti-Cheat: https://github.com/J-Tanzanite/Little-Anti-Cheat/
 
-## Note:
-This is an early release, expect things to change!\
-Currently thinking about changing the ConVar names, but we'll see.\
-Maybe adding a config file too?
-
 ## Patching method:
 This patch method basically simulates a player's tickcount (as if it incremented normally) when their tickcount suddenly jumps/spikes above the tolerance set by the Convar below.\
 This does not happen to players who recently spawned or teleported.
